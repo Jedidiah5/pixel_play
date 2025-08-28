@@ -1,0 +1,306 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+    />
+
+    <title>Pixel Play - Arcade Games</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function showGameInfo(gameTitle, description) {
+        alert(`${gameTitle}\n\n${description}\n\nClick the Play button to start the game!`);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout-container">
+        <header>
+          <div class="header-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="logo-text">Pixel Play</h2>
+          </div>
+          <div class="header-nav">
+            <div class="nav-links">
+              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#">Games</a>
+              <a class="nav-link" href="#">Leaderboard</a>
+
+            </div>
+            <button class="settings-button">
+              <div class="settings-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="content-container">
+            <div class="hero-container">
+              <div class="hero-text">
+                <h1 class="hero-title">
+                  Step into the World of Pixel Play
+                </h1>
+                <h2 class="hero-subtitle">
+                  Relive the golden age of gaming<br>
+                  with our curated collection of<br>
+                  classic arcade games.<br><br>
+                  Challenge your friends, climb the leaderboards,<br>
+                  and become a Pixel Play champion!
+                </h2>
+              </div>
+              <button class="hero-button">
+                <span>Start Playing</span>
+              </button>
+            </div>
+            <h2 class="section-header">Featured Games</h2>
+            <div class="game-grid">
+              <div class="game-card">
+                <div class="game-image" style='background-image: url("Assets/snake.png");'>
+                  <div class="game-overlay">
+                    <div class="overlay-buttons">
+                      <a href="snake.html" class="play-button">Play</a>
+                      <button class="info-button" onclick="showGameInfo('Snake', 'Guide the snake to eat food and grow longer. Use arrow keys to control the snake. Don\'t hit the walls or yourself!')">Info</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-info">
+                  <p class="game-title">Snake</p>
+                  <p class="game-description">Guide the snake to eat food and grow longer</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div class="game-image" style='background-image: url("Assets/pong.png");'>
+                  <div class="game-overlay">
+                    <div class="overlay-buttons">
+                      <a href="pong.html" class="play-button">Play</a>
+                      <button class="info-button" onclick="showGameInfo('Pong', 'Classic paddle game! Use W/S keys to move your paddle up and down. Don\'t let the ball pass you!')">Info</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-info">
+                  <p class="game-title">Pong</p>
+                  <p class="game-description">Classic paddle game - don't let the ball pass you</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div class="game-image" style='background-image: url("Assets/tictactoe.png");'>
+                  <div class="game-overlay">
+                    <div class="overlay-buttons">
+                      <a href="tictactoe.html" class="play-button">Play</a>
+                      <button class="info-button" onclick="showGameInfo('Tic Tac Toe', 'Classic X\'s and O\'s game for two players. Take turns placing your mark to get three in a row!')">Info</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-info">
+                  <p class="game-title">Tic Tac Toe</p>
+                  <p class="game-description">Classic X's and O's game for two players</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div class="game-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZR6H5yYv6Hzu2IcRtI80OXPdyQ6hxCWrHd9WyZmMlubOeRewFphNR4i9YLDlzLG1tiUsh4VBG-gXWwTA8c83PpE96ZTQuU5CvSDCsDwoWLZ-TbMeHPX3QDEk1v-kEqGef97-8jisT5Bc40t7DAjD3-B6FahbZieDvSpbwSDrgzvzB65Eh23hxA3wqjYyAvmWvmmQF5o_z1aMqsQGd6CylIbCVIeCR64t_wGcDxdxYzA3blrAi_MXz_5WmRLueYmXiAxhMADYh1pU");'>
+                  <div class="game-overlay">
+                    <div class="overlay-buttons">
+                      <a href="memory.html" class="play-button">Play</a>
+                      <button class="info-button" onclick="showGameInfo('Memory Match', 'Test your memory! Find matching pairs of cards. Click cards to flip them and remember their positions.')">Info</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-info">
+                  <p class="game-title">Memory Match</p>
+                  <p class="game-description">Test your memory with matching pairs</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div class="game-image" style='background-image: url("Assets/wac-a-mole.jpeg");'>
+                  <div class="game-overlay">
+                    <div class="overlay-buttons">
+                      <a href="whackamole.html" class="play-button">Play</a>
+                      <button class="info-button" onclick="showGameInfo('Whack-a-Mole', 'Whack the moles as they pop up from holes! Click on moles to score points. How many can you whack in 30 seconds?')">Info</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-info">
+                  <p class="game-title">Whack-a-Mole</p>
+                  <p class="game-description">Whack the moles as they pop up from holes</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="section-header">Coming Soon</h2>
+            <div class="game-grid">
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD37DrsEXlBoQ_FGs_qGIuhukAMHiIt3w6rta8jdCu0ms7rszd-5XM7B6E-0QZg-bFAb1mbmmdy6isQwrbutk3jdQAYZnlie8mCnEetv3U9iv92JrXWGy8uxqsn6Bkzh5ahqiH-9EmJf2FFK-RTuHd4ky8jWUXa97cHswG98uXjqXqchr_ZIwAjm4ECn10KAuAWfN6d_6f8BMMg7UmDJyu9kV5VxNII9MsSOJrhojr9hPwu9mh7tBDQ50SwKhfq-ai_Tj-IOwjuKgU");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Cosmic Invaders</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBW9yZ1OQbhg4qb7qHOzG7gVYrqiZQXcEq6_zz514ePMG9HgAvitzB4IsEsQR_utEOaRxBTyxc6kds5HnK134wKNxA6Sp3BygAQ8t9QfpdJcAzDPYULVaBjzJkHdxxuHQw2q3KQHGTgRv3wsNijP2dxL-1qYiepHB8L4GUnY1KClvtrNScfx4117CDyazAviFAjJe4QK8FrFbKF5M1na9rOlist8E2LYop5uTOLMisUMyoDusg-XXdqn_3Ly69RS-xfPjiRLR1etdU");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Brick Breaker</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJec-XZqN4xU2lCjkmsjTTlfiSMc4VtA9GFnio2sX-lXoHe_-JGtY7WNah36oZaj3OBBDiDf2K1E59tDyxvQkb3C1wFbqCCTj0LJySJX9roPwzyyt6VUiPRHfnbMJ3Bo5GYzTYrfazIKSWMN8F6tRGBwufS-RmGc_Ts3jKg3m997ucaPWNPPfzCBUBvP1CrlCI_21bsPxRJpXRNDFMctWz9lLbkfyCt83oGtmspCy8uhXwJEdaS4MWUz-T0vF1LWMJPUmLhpUv8CY");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Speed Racer</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSFBlV8yYAEClUsSVH-IRutspJXSqyc-1dVr-ACFtyuO1V13W7GLJbi1hhr3b9Rrt12SV1u67YiJGG4hf9rffUweBt9feIqxLatWbDmWyiL9g57-fVYMarfujmEugFByiN1rp54tF6nr44t-UFZZB_5KdM3n7067XtPtZiu637wi65jhl0Xw56hoF15LQwh2gJzKkOxSkq4Dc2CUjw0W11C3EN7K00DzQ171y5N1_86eKirn6K7NgOoYpT3n7IqsrxaBXMJosPAGg");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Puzzle Master</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOtNvF9wQAqSLcDEltcbCPNyiVtpg6J_PNv-sI1OVjOsx7AYtU2dTYXwRkarscHP2IPCkTzYxiFeOgG3UuWYJBjeeV2P80FNPnO3Dvc69c31Gy_aRWQq3LKtiXJSH6L6gDJj9tLcIhJAcvQ5R5Su19pgzvYPTk7ACOd2s51iyAFIodCSHlzw9fh4V92QGRxocQMU1sBgCIKgzKzYQVpIhsnqCDAWLJjniztKCf_njwcIyVhyHU7d__Aas-XdPSJV9nQ0GLSkH-cHQ");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Space Explorer</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2p1MEM1xVhYVFGu8EQUh4Ob7oeEzb0gTIMAWEgXleDYP21Aa_e36RgD0rdBKVW6nljP-j_OF4L9vhL-HBB4Ce_XgjVLWHTSCLzHDXb5sETx3HgoE2lMgSCdqMWG35Z3kVaszYJS1GLY4qUmRCkGhp0cjLKhYck-MKEAqAViB8Ngp_7QjT-pd9c5nkNSrnFy78KzOivfHjRzABk5QdGmXwahL-Ohe3yoCIlzhUP1RItaC5Lb2ulJX6y7iQFIy0-ccOPQ0Cf1BdT74");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Maze Runner</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2JMBJY2DKCy0Msi9adnwmsc_X5GI6AMfDN7yA8GAEhnpnmKPFg9oIMLb8MhsM4pDR4NR9Henz4b5CK_8Bt3x7xMv30y5SoYtJuUdXH8L9FQ654g-c4WerWWH2ZS0hVfzi1QoPu_m5FKOlQY5GB3ATY9j8mborP2-nlu6Kwmpy5ftXoJRashKe9pYNJH8i6zTdIhtAAHT8aYvPggFsQIPVRQ-BYutaCnZSDfjJXSKAkpUqgPNGh-YhLKqWLCuGOteGm8QB0FXJhCw");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Retro Fighter</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAp01Czlm0TOlCmLN01PN0odgSxk58PYWqQaiXXecDwuhoKfTcp_yHbkowv3ghDHOEKyElq-Dxc5KjM262nJtpaj6N7mYQO1YhXNia7bpGv_XeAvS0ABX3clBMwoKik9T1sdmBTGSaKREHqxK7ajJdBoV62M0LkUUxjc89m_DkuVg5lTESN5SOPTeXmLuhadpByj3-m9y8v15wSATMVUg4ICdbCs1j5sHvxSsMAJpK6HlC2RA28ieS0j4A70Cb-GefhpgmxmbyI1aY");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Pixel Platformer</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo5Amed0Uc6ZlO9QYu-AhfCSIVI-BdLT-2YSwmhGd_ZuTqTLZdJjycHZDclXTIQCtc-u8HCRPzqyi-_o18EDo7dhVmAe_xhmI_ygra_gvIvyKjgVvE9jTTjUglp0o_b0iCp3j2Phci_NDrL7n4847ooT8NZDQX8-cx84JlDNntGCgbOH59IbgWskDUIHd69VrLCK2JbHH6f5BzeqWHuDdBBv6F89AvNeyuTqYSBN6VKb8GOQGPJh2ykZCUyd7rIIV-8oF6lfJFDUU");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Arcade Shooter</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpG0XnGCkCcHeS5uuRpj8b2aAJHDk-hn79JJ6Es2z-iuT2h3oDxDWg0GjmXGvMEnWO5bD__689zwECI3UiAJ7vGb7HL5hs6P20z4TAOo7Tq_V4CXRJscGsRctS6TwSSN5OrmT2cxdE1NB7Sq9CChcvvHwegMbZ_hjLyUuwvjpuB6a6yVZhTy0I51bCjoPi47-SUt7-LGzRyI6U2IIMclgdQlH7Actgo821T5kXvVuevkDWIMLnN9mMy5HrcqeK3KCSzl9DfbYmzhk");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Word Scramble</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+              <div class="game-card">
+                <div
+                  class="game-image coming-soon"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDARdl3y0X8LrCN0gaHZmlQ8xQ9GTslU5Zg4raRZugX52DDlivVjz0htBksFR8-TxPbBv7gyF-wWFv4zeVG1M2qW5zmgz1HkmPCCNIIM9Yd6yhqMXmz_m0R9X5J88T0z5HynwjFNzKqQygO2d0I0gl1J10Td3SA2B_fR0VDzDVxldmeG6Lwvh9iss82o_H5Eou4W0TR8_KerPAqvdLCp8eoJut-3KouJxM9vTg33GTaKWepVdTBMgSIGoSB6lKhISTPtI3jNWWlJNA");'
+                ></div>
+                <div class="game-info">
+                  <p class="game-title">Color Blast</p>
+                  <p class="game-description">Coming Soon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div class="footer-container">
+            <div class="footer-content">
+              <div class="footer-links">
+                <a class="footer-link" href="#">About</a>
+                <a class="footer-link" href="#">Contact</a>
+                <a class="footer-link" href="#">Terms of Service</a>
+                <a class="footer-link" href="#">Privacy Policy</a>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <div class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link">
+                  <div class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link">
+                  <div class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              <p class="copyright">@2024 Pixel Play. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

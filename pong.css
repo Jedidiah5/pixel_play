@@ -1,0 +1,234 @@
+/* Pong Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Spline Sans", "Noto Sans", sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    overflow-x: hidden;
+}
+
+.game-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Game Header */
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid #363636;
+    background-color: #1a1a1a;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #adadad;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: white;
+}
+
+.game-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.score-display {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.player-score, .ai-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.score-label {
+    color: #adadad;
+}
+
+.score-value {
+    color: #4ade80;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.ai-score .score-value {
+    color: #ef4444;
+}
+
+/* Game Main */
+.game-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+.game-info {
+    text-align: center;
+    max-width: 600px;
+}
+
+.game-description {
+    font-size: 18px;
+    color: #adadad;
+    margin-bottom: 20px;
+}
+
+.controls-info h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.controls-info p {
+    color: #adadad;
+    font-size: 14px;
+}
+
+/* Game Area */
+.game-area {
+    position: relative;
+    border: 2px solid #363636;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #0f0f0f;
+}
+
+#gameCanvas {
+    display: block;
+    background-color: #0f0f0f;
+}
+
+/* Game Overlay */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #4ade80;
+}
+
+.overlay-content p {
+    font-size: 16px;
+    color: #adadad;
+    margin-bottom: 24px;
+}
+
+/* Game Controls */
+.game-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.game-button {
+    padding: 12px 24px;
+    background-color: #363636;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-button:hover {
+    background-color: #4ade80;
+    color: #0f0f0f;
+}
+
+.game-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .game-title {
+        font-size: 24px;
+    }
+    
+    .score-display {
+        gap: 16px;
+    }
+    
+    .game-main {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+    
+    .game-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #gameCanvas {
+        max-width: 400px;
+    }
+    
+    .game-title {
+        font-size: 20px;
+    }
+    
+    .score-value {
+        font-size: 20px;
+    }
+    
+    .score-display {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

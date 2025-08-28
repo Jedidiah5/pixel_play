@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Pixel Play</title>
+    <link rel="stylesheet" href="tictactoe.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Spline+Sans:wght@400;500;700" />
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <a href="index.html" class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Arcade
+            </a>
+            <h1 class="game-title">Tic Tac Toe</h1>
+            <div class="game-status">
+                <span class="status-label">Status:</span>
+                <span class="status-value" id="gameStatus">Player X's Turn</span>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="game-info">
+                <p class="game-description">Classic X's and O's game. Get three in a row to win!</p>
+                <div class="controls-info">
+                    <h3>How to Play:</h3>
+                    <p>Click on any empty square to place your mark. First to get three in a row wins!</p>
+                </div>
+            </div>
+
+            <div class="game-area">
+                <div class="game-board" id="gameBoard">
+                    <div class="board-cell" data-index="0"></div>
+                    <div class="board-cell" data-index="1"></div>
+                    <div class="board-cell" data-index="2"></div>
+                    <div class="board-cell" data-index="3"></div>
+                    <div class="board-cell" data-index="4"></div>
+                    <div class="board-cell" data-index="5"></div>
+                    <div class="board-cell" data-index="6"></div>
+                    <div class="board-cell" data-index="7"></div>
+                    <div class="board-cell" data-index="8"></div>
+                </div>
+                <div class="game-overlay" id="gameOverlay">
+                    <div class="overlay-content">
+                        <h2 id="overlayTitle">Tic Tac Toe</h2>
+                        <p id="overlayMessage">Click to start a new game</p>
+                        <button id="startButton" class="game-button">New Game</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="restartButton" class="game-button">Restart</button>
+                <button id="resetScoreButton" class="game-button">Reset Score</button>
+            </div>
+
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="score-label">Player X:</span>
+                    <span class="score-value" id="playerXScore">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Player O:</span>
+                    <span class="score-value" id="playerOScore">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Draws:</span>
+                    <span class="score-value" id="drawScore">0</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="tictactoe.js"></script>
+</body>
+</html>
