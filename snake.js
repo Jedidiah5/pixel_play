@@ -11,6 +11,12 @@ class SnakeGame {
         this.pauseButton = document.getElementById('pauseButton');
         this.restartButton = document.getElementById('restartButton');
 
+        // Ensure canvas is properly sized
+        if (!this.canvas || !this.ctx) {
+            console.error('Canvas or context not found!');
+            return;
+        }
+
         // Game settings
         this.gridSize = 20;
         this.tileCount = this.canvas.width / this.gridSize;
@@ -114,6 +120,7 @@ class SnakeGame {
         this.gameRunning = true;
         this.gamePaused = false;
         this.overlay.style.display = 'none';
+        console.log('Game started!');
         this.gameLoop();
     }
 

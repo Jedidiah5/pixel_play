@@ -110,6 +110,8 @@ body {
 #gameCanvas {
     display: block;
     background-color: #0f0f0f;
+    width: 400px;
+    height: 400px;
 }
 
 /* Game Overlay */
@@ -189,8 +191,8 @@ body {
     }
     
     #gameCanvas {
-        width: 300px;
-        height: 300px;
+        width: 300px !important;
+        height: 300px !important;
     }
     
     .game-controls {
@@ -201,8 +203,8 @@ body {
 
 @media (max-width: 480px) {
     #gameCanvas {
-        width: 250px;
-        height: 250px;
+        width: 250px !important;
+        height: 250px !important;
     }
     
     .game-title {
