@@ -19,7 +19,7 @@ class SnakeGame {
 
         // Game settings
         this.gridSize = 20;
-        this.tileCount = this.canvas.width / this.gridSize;
+        this.tileCount = 20; // Fixed tile count for 400x400 canvas
         this.speed = 150;
 
         // Game state
@@ -27,7 +27,7 @@ class SnakeGame {
         this.gamePaused = false;
         this.score = 0;
 
-        // Snake properties
+        // Snake properties - start in center of screen
         this.snake = [
             { x: 10, y: 10 }
         ];
@@ -120,7 +120,7 @@ class SnakeGame {
         this.gameRunning = true;
         this.gamePaused = false;
         this.overlay.style.display = 'none';
-        console.log('Game started!');
+        console.log('Game started! Snake position:', this.snake[0]);
         this.gameLoop();
     }
 
@@ -168,8 +168,15 @@ class SnakeGame {
         this.dx = this.nextDx;
         this.dy = this.nextDy;
 
+        // Don't move if no direction is set (waiting for first key press)
+        if (this.dx === 0 && this.dy === 0) {
+            return;
+        }
+
         // Move snake
         const head = { x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy };
+        
+        console.log('Moving snake to:', head, 'Current direction:', this.dx, this.dy);
 
         // Check wall collision
         if (head.x < 0 || head.x >= this.tileCount || head.y < 0 || head.y >= this.tileCount) {
@@ -177,8 +184,8 @@ class SnakeGame {
             return;
         }
 
-        // Check self collision
-        for (let i = 0; i < this.snake.length; i++) {
+        // Check self collision - only check against body segments, not the head
+        for (let i = 1; i < this.snake.length; i++) {
             if (head.x === this.snake[i].x && head.y === this.snake[i].y) {
                 this.gameOver();
                 return;
