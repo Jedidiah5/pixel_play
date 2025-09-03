@@ -10,6 +10,7 @@ class MemoryGame {
         this.startButton = document.getElementById('startButton');
         this.restartButton = document.getElementById('restartButton');
         this.resetScoreButton = document.getElementById('resetScoreButton');
+        this.difficultySelect = document.getElementById('difficulty');
         
         // Score elements
         this.bestTimeElement = document.getElementById('bestTime');
@@ -26,8 +27,9 @@ class MemoryGame {
         this.startTime = 0;
         this.elapsedTime = 0;
 
-        // Card symbols (8 pairs = 16 cards total)
-        this.cardSymbols = ['🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎵', '🎸'];
+        // Card symbols for different difficulties
+        this.allSymbols = ['🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎵', '🎸', '🎺', '🎻', '🎼', '🎹', '🎤', '🎧', '🎨', '🎭', '🎪', '🎯'];
+        this.cardSymbols = this.getSymbolsForDifficulty('medium');
 
         // Best scores (stored in localStorage)
         this.bestScores = this.loadBestScores();
@@ -53,6 +55,47 @@ class MemoryGame {
         this.resetScoreButton.addEventListener('click', () => {
             this.resetBestScores();
         });
+
+        this.difficultySelect.addEventListener('change', () => {
+            this.changeDifficulty();
+        });
+    }
+
+    getSymbolsForDifficulty(difficulty) {
+        switch (difficulty) {
+            case 'easy':
+                return this.allSymbols.slice(0, 6); // 6 pairs = 12 cards (3x4 grid)
+            case 'medium':
+                return this.allSymbols.slice(0, 8); // 8 pairs = 16 cards (4x4 grid)
+            case 'hard':
+                return this.allSymbols.slice(0, 18); // 18 pairs = 36 cards (6x6 grid)
+            default:
+                return this.allSymbols.slice(0, 8);
+        }
+    }
+
+    changeDifficulty() {
+        if (this.gameActive) {
+            if (confirm('Are you sure you want to change difficulty? This will restart the current game.')) {
+                this.cardSymbols = this.getSymbolsForDifficulty(this.difficultySelect.value);
+                this.renderBoard();
+                this.startNewGame();
+            } else {
+                // Reset the select to previous value
+                this.difficultySelect.value = this.getCurrentDifficulty();
+            }
+        } else {
+            this.cardSymbols = this.getSymbolsForDifficulty(this.difficultySelect.value);
+            this.renderBoard();
+        }
+    }
+
+    getCurrentDifficulty() {
+        const symbolCount = this.cardSymbols.length;
+        if (symbolCount === 6) return 'easy';
+        if (symbolCount === 8) return 'medium';
+        if (symbolCount === 18) return 'hard';
+        return 'medium';
     }
 
     loadBestScores() {
@@ -226,6 +269,9 @@ class MemoryGame {
 
     renderBoard() {
         this.gameBoard.innerHTML = '';
+        
+        // Set the correct CSS class for the difficulty
+        this.gameBoard.className = 'game-board ' + this.getCurrentDifficulty();
         
         // Create pairs of cards
         const allSymbols = [...this.cardSymbols, ...this.cardSymbols];
