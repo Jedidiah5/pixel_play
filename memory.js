@@ -27,7 +27,7 @@ class MemoryGame {
         this.elapsedTime = 0;
 
         // Card symbols (8 pairs = 16 cards total)
-        this.cardSymbols = ['🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎪', '🎯'];
+        this.cardSymbols = ['🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎵', '🎸'];
 
         // Best scores (stored in localStorage)
         this.bestScores = this.loadBestScores();
@@ -167,9 +167,15 @@ class MemoryGame {
         const symbol1 = card1.dataset.symbol;
         const symbol2 = card2.dataset.symbol;
 
+        // Add checking animation
+        card1.classList.add('checking');
+        card2.classList.add('checking');
+
         if (symbol1 === symbol2) {
             // Match found!
             setTimeout(() => {
+                card1.classList.remove('checking');
+                card2.classList.remove('checking');
                 card1.classList.add('matched');
                 card2.classList.add('matched');
                 this.matchedPairs++;
@@ -182,6 +188,8 @@ class MemoryGame {
         } else {
             // No match, flip cards back
             setTimeout(() => {
+                card1.classList.remove('checking');
+                card2.classList.remove('checking');
                 card1.classList.remove('flipped');
                 card2.classList.remove('flipped');
                 this.flippedCards = [];

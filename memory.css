@@ -158,6 +158,16 @@ body {
     transform: none;
 }
 
+.memory-card.checking {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -176,9 +186,19 @@ body {
 }
 
 .card-back {
-    background-color: #2a2a2a;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     color: transparent;
     transform: rotateY(180deg);
+    position: relative;
+}
+
+.card-back::before {
+    content: '?';
+    position: absolute;
+    color: #4ade80;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.7;
 }
 
 /* Game Overlay */
