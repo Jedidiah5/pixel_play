@@ -201,12 +201,12 @@ body {
     background-color: #4ade80;
     color: #0f0f0f;
     font-weight: bold;
+    transform: rotateY(180deg);
 }
 
 .card-back {
     background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     color: transparent;
-    transform: rotateY(180deg);
     position: relative;
 }
 
