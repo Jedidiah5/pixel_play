@@ -4,6 +4,7 @@ class WhackAMoleGame {
         this.gameBoard = document.getElementById('gameBoard');
         this.scoreElement = document.getElementById('score');
         this.timeLeftElement = document.getElementById('timeLeft');
+        this.streakElement = document.getElementById('streak');
         this.overlay = document.getElementById('gameOverlay');
         this.overlayTitle = document.getElementById('overlayTitle');
         this.overlayMessage = document.getElementById('overlayMessage');
@@ -24,11 +25,12 @@ class WhackAMoleGame {
         this.gameTimer = null;
         this.moleTimer = null;
         this.currentMole = null;
+        this.streak = 0; // Consecutive hits for speed boost
 
         // Game settings
         this.gameDuration = 30; // seconds
-        this.minMoleTime = 800; // milliseconds
-        this.maxMoleTime = 2000; // milliseconds
+        this.minMoleTime = 300; // milliseconds (faster!)
+        this.maxMoleTime = 800; // milliseconds (faster!)
 
         // Statistics (stored in localStorage)
         this.stats = this.loadStats();
@@ -85,6 +87,7 @@ class WhackAMoleGame {
         this.score = 0;
         this.timeLeft = this.gameDuration;
         this.currentMole = null;
+        this.streak = 0;
         
         this.overlay.style.display = 'none';
         this.updateDisplay();
@@ -149,10 +152,16 @@ class WhackAMoleGame {
         randomHole.classList.add('active');
         this.currentMole = randomHole;
 
-        // Set random duration for this mole
-        const moleDuration = Math.random() * (this.maxMoleTime - this.minMoleTime) + this.minMoleTime;
+        // Set random duration for this mole (gets faster as time progresses)
+        const timeProgress = (this.gameDuration - this.timeLeft) / this.gameDuration;
+        const speedMultiplier = 1 - (timeProgress * 0.5); // Gets 50% faster over time
+        const adjustedMinTime = this.minMoleTime * speedMultiplier;
+        const adjustedMaxTime = this.maxMoleTime * speedMultiplier;
+        const moleDuration = Math.random() * (adjustedMaxTime - adjustedMinTime) + adjustedMinTime;
         
         this.moleTimer = setTimeout(() => {
+            // Mole escaped - reset streak
+            this.streak = 0;
             this.clearCurrentMole();
             if (this.gameActive && !this.gamePaused) {
                 this.spawnMole();
@@ -187,9 +196,13 @@ class WhackAMoleGame {
         // Add whacked effect
         hole.classList.add('whacked');
         
-        // Calculate score based on time left (faster = more points)
+        // Increase streak
+        this.streak++;
+        
+        // Calculate score based on time left and streak (faster = more points)
         const timeBonus = Math.floor(this.timeLeft / 5) + 1;
-        const points = 10 + timeBonus;
+        const streakBonus = Math.floor(this.streak / 3); // Bonus every 3 hits
+        const points = 10 + timeBonus + streakBonus;
         this.score += points;
         
         // Update display
@@ -203,12 +216,13 @@ class WhackAMoleGame {
             hole.classList.remove('whacked');
         }, 300);
         
-        // Spawn a new mole after a short delay
+        // Spawn a new mole after a short delay (faster with streak)
+        const streakDelay = Math.max(50, 200 - (this.streak * 10)); // Minimum 50ms delay
         setTimeout(() => {
             if (this.gameActive && !this.gamePaused) {
                 this.spawnMole();
             }
-        }, 500);
+        }, streakDelay);
     }
 
     endGame() {
@@ -250,6 +264,7 @@ class WhackAMoleGame {
     updateDisplay() {
         this.scoreElement.textContent = this.score;
         this.timeLeftElement.textContent = this.timeLeft;
+        this.streakElement.textContent = this.streak;
     }
 
     updateStatsDisplay() {
